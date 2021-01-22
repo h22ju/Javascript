@@ -34,7 +34,8 @@ javascript는 object 기반 언어이다.
 객체.속성 = 값;
 ```
 
-img
+![object_model](https://user-images.githubusercontent.com/76121929/105486091-48039480-5cf1-11eb-836c-98d70a051abf.JPG)
+
 
 객체의 종류
 
