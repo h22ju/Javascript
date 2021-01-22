@@ -57,5 +57,6 @@ navigator, screen, location, frames, history 객체 등이 있다.
 
 ##### Built-in Object
 
-String, Date, Array, Math등이 있다.
 `참조 변수(인스턴스 이름) = new 생성함수();`
+
+
