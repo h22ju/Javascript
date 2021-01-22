@@ -20,3 +20,41 @@ HTML5에는 Geolocation, Canvas, Drag&Drop등 풍부한 API(Application Programm
 최근 제이쿼리(JQuery), 앵귤러(Angular)JS, 리액트(React)JS, 노드(Node)JS, 폰갭(PhoneGap)JS등 다양한 라이브러리가 등장함.  
 이전의 자바스크립트는 클라이언트 컴퓨터에서만 작동하는 언어였지만, 현재는 NodeJS를 사용할 경우 서버에서도 작동 가능함.  
 사이트제작, 모바일 웹, 앱, 스마트TV등 다양한 UI개발에 사용되고 있음.  
+
+---
+
+### Object Model
+
+javascript는 object 기반 언어이다.
+객체는 method와 property을 가지고 있다.
+
+```
+객체.메서드();
+객체.속성;
+객체.속성 = 값;
+```
+
+img
+
+객체의 종류
+
+- 문서 객체 모델 (**D**ocument **O**bject **M**odel)
+- 브라우저 객체 모델 (**B**rowser **O**bject **M**odel)
+- 내장 객체 (Built-in Object)
+
+---
+
+##### DOM
+
+문서 객체 모델은 HTML문서 구조를 말한다.
+`<html>, <head>, <body>, <img>`등의 객체들을 제어한다.
+
+##### BOM
+
+현재 브라우저에 계층 구조로 내장되어 있는 객체를 말한다.
+navigator, screen, location, frames, history 객체 등이 있다.
+
+##### Built-in Object
+
+String, Date, Array, Math등이 있다.
+`참조 변수(인스턴스 이름) = new 생성함수();`
