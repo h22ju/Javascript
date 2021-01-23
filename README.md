@@ -131,6 +131,7 @@ var result = a > b ? "hello" : "world";
 ---
 
 ## 03. 제어문
+
 #### 조건문 ( if/ else / else if )
 #### 선택문 ( switch )
 #### 반복문 ( while / for )
@@ -204,10 +205,44 @@ javascript는 object 기반 언어이다.
 현재 브라우저에 계층 구조로 내장되어 있는 객체를 말한다.
 navigator, screen, location, frames, history 객체 등이 있다.
 
+##### alert
+경고창을 나타낼 때 사용
+`alert("경고 메시지");`
+##### confirm
+확인, 취소창을 나타냄. 확인을 누르면 true, 취소를 누르면 false를 반환함.
+`confirm("질의내용");`
+##### prompt
+질의응답창을 나타낼 때 사용
+`prompt("질의내용","기본답변");`
+
+#### location
+`location.herf = 'http://google.com'` `location = 'http://google.com'` : 참조 주소를 설정하거나 url을 반환함
+`location.reload()` : 브라우저 새로고침
+
+#### navigator
+`navigator.appName` : 현재 브라우저의 이름 반환
+`navigator.appVersion` : 현재 브라우저의 버전 정보 반환
+`navigator.platform` : 현재 컴퓨터의 운영체제 정보 제공
+
+#### history
+`history.back()` : 이전 방문 사이트로 이동
+`history.foward()` : 다음 방문 사이트로 이동
+`history.go(n)` : n에 -2를 입력하면 2단계 이전의 방문 사이트로 이동
+`history.length` : 방문기록에 저장된 목록 개수 반환
+
+#### open
+`open("URL","새 창 이름", "새 창 옵션");`
+`window.open("http://google.com", "google", "width=500, height=800, left=50, top=10, scrollbars=no);`
+
 ##### Built-in Object
 
 `참조 변수(인스턴스 이름) = new 생성함수();`
 
 
 [생활코딩 자바스크립트 사전](https://opentutorials.org/course/50, "javascript")
+
+---
+
+## 05. 함수
+
 
