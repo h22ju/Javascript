@@ -130,8 +130,49 @@ var result = a > b ? "hello" : "world";
 
 ---
 
+## 03. 제어문
+#### 조건문 ( if/ else / else if )
+#### 선택문 ( switch )
+#### 반복문 ( while / for )
 
-### Object Model
+##### while
+```
+var 변수 = 초깃값;
+while (조건식) {
+  자바스크립트 코드
+  증감식;
+ }
+```
+##### do while
+```
+var 변수 = 초깃값;
+do{
+  자바스크립트 코드;
+  증감식;
+ }while(조건식)
+```
+##### for
+```
+for(초깃값; 조건식; 증감식) {
+  자바스크립트 코드;
+ }
+```
+##### 중첩 for
+```
+for(초깃값; 조건식; 증감식) {
+  for(초깃값; 조건식; 증감식) {
+  자바스크립트 코드;
+  }
+ }
+```
+
+##### break, continue
+break : 반복문을 강제로 종료
+continue : continue 다음에 오는 코드는 무시하고 바로 조건식으로 이동
+
+---
+
+## 04. 객체
 
 javascript는 object 기반 언어이다.
 객체는 method와 property을 가지고 있다.
