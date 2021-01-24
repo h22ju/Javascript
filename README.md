@@ -245,4 +245,28 @@ navigator, screen, location, frames, history 객체 등이 있다.
 
 ## 05. 함수
 
+#### basic
+```
+function 함수명() {
+  자바스크립트 코드;
+ }
+```
+#### parameter, argument
+```js
+function sum1(left, right) { // left, right는 parameter(매개변수)
+document.write(left+right);
+}
+
+sum(2,3); // 2, 3은 argument (인자)
+```
+
+#### return
+```js
+function sum2(left, right) { 
+  return left+right;
+}
+
+document.write(sum2(2,3));
+```
+
 
