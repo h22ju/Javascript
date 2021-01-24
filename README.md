@@ -261,6 +261,7 @@ sum(2,3); // 2, 3은 argument (인자)
 ```
 
 ```js
+// 간단하게 만들어본 구구단 함수
 function gugu(num) {
   for (var i = 1; i <= 9; i++) {
     document.write(num + " X " + i + " = " + num * i + "<br>");
