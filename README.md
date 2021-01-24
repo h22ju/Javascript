@@ -260,6 +260,16 @@ document.write(left+right);
 sum(2,3); // 2, 3은 argument (인자)
 ```
 
+```js
+function gugu(num) {
+  for (var i = 1; i <= 9; i++) {
+    document.write(num + " X " + i + " = " + num * i + "<br>");
+  }
+}
+
+gugu(6);
+```
+
 #### return
 ```js
 function sum2(left, right) { 
