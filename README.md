@@ -64,14 +64,49 @@ HTML5에는 Geolocation, Canvas, Drag&Drop등 풍부한 API(Application Programm
 변수명에는 영문과 숫자 일부 특수문자만 포함 가능하다.
 변수명은 의미에 맞게 만드는것이 좋다.
 변수명은 두 번째 단어의 첫 글자는 대문자로 표기하는 Camel표기법으로 표기하는것이 좋다.
-`var 변수명;` `var 변수명 = 값;`
-`var box;` `var box = 1;`
-```js
-var box;
-box = 100;
-box = 30;
-```
-변수에는 하나의 값만 넣을 수 있으므로, 기존에 저장된 데이터 100은 삭제되고 새로운 데이터 30만 저장된다.
+
+1. Use strict
+   added in ES5
+   use this for Vanlina Javascript.
+   `'use strict';`
+
+---
+
+2. Variable (mutable data type)
+
+img
+
+|                                                             var                                                             | vs  |                    let                     |
+| :-------------------------------------------------------------------------------------------------------------------------: | :-: | :----------------------------------------: |
+| var 선언 전에 값을 할당하여도 에러가 발생하지 않음.<br>(var hoisting) 어디에 선언했는지 상관없이 제일 위로 끌어올려주는 것. |     | let 선언 전에 값을 할당하면 에러가 발생함. |
+|                                                          Undefined                                                          |     |              Reference Error               |
+
+**var를 쓰면 안되는이유**
+
+1. var hoisting
+2. block scope 무시 (블록안에 변수 선언 후 블록 밖에서 출력하면 정상출력 됨)
+
+---
+
+3. Constants (immutable data type)
+   한번 값을 할당하면 값이 절대 바뀌지 않음.
+
+img
+
+**constants를 사용하는 이유**
+
+1. security
+2. thread safety
+3. reduce human mistake
+
+---
+
+4. Variable Type
+
+| Primitive Type | Object Type |
+| :------------: | :---------: |
+|single item|box container|
+|number, string, boolean,<br>null, undefined, symbol|function<br>first-class function|
 
 #### 변수에 저정할 수 있는 자료형
 
