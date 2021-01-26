@@ -54,27 +54,30 @@ HTML5에는 Geolocation, Canvas, Drag&Drop등 풍부한 API(Application Programm
 ---
 
 ### 변수
-변수(Variables)는 변하는 데이터를 저장할 수 있는 메모리 공간
-변수에는 데이터가 오직 한 개만 저장된다.
-새로운 데이터가 들어오면 기존에 있던 데이터는 메모리 공간에서 지워지게 된다.
+
+변수(Variables)는 변하는 데이터를 저장할 수 있는 메모리 공간  
+변수에는 데이터가 오직 한 개만 저장된다.  
+새로운 데이터가 들어오면 기존에 있던 데이터는 메모리 공간에서 지워지게 된다.  
 변수에 저장할 수 있는 데이터의 종류로는 String, Number, Boolean, Null 데이터가 있다.
 
 #### 변수 선언
-변수 선언시 var 키워드를 변수명앞에 선언한다.
-변수명에는 영문과 숫자 일부 특수문자만 포함 가능하다.
-변수명은 의미에 맞게 만드는것이 좋다.
-변수명은 두 번째 단어의 첫 글자는 대문자로 표기하는 Camel표기법으로 표기하는것이 좋다.
 
-1. Use strict
-   added in ES5
-   use this for Vanlina Javascript.
-   `'use strict';`
+변수 선언시 var 키워드를 변수명앞에 선언한다.  
+변수명에는 영문과 숫자 일부 특수문자만 포함 가능하다.  
+변수명은 의미에 맞게 만드는것이 좋다.  
+변수명은 두 번째 단어의 첫 글자는 대문자로 표기하는 Camel표기법으로 표기하는것이 좋다. <br>
+**ES6**
 
----
+### 1. Use strict
 
-2. Variable (mutable data type)
+added in ES5
+use this for Vanlina Javascript.
+`'use strict';`
+<br>
 
-img
+### 2. Variable (mutable data type)
+
+![variable](https://user-images.githubusercontent.com/76121929/105822065-ee57de80-5ffe-11eb-9bff-59f93b803644.JPG)
 
 |                                                             var                                                             | vs  |                    let                     |
 | :-------------------------------------------------------------------------------------------------------------------------: | :-: | :----------------------------------------: |
@@ -85,13 +88,11 @@ img
 
 1. var hoisting
 2. block scope 무시 (블록안에 변수 선언 후 블록 밖에서 출력하면 정상출력 됨)
+   <br>
 
----
+### 3. Constants (immutable data type)
 
-3. Constants (immutable data type)
-   한번 값을 할당하면 값이 절대 바뀌지 않음.
-
-img
+한번 값을 할당하면 값이 절대 바뀌지 않음.
 
 **constants를 사용하는 이유**
 
@@ -99,26 +100,91 @@ img
 2. thread safety
 3. reduce human mistake
 
----
+![const](https://user-images.githubusercontent.com/76121929/105822069-ef890b80-5ffe-11eb-97fc-656e2d39a5fc.JPG)
 
-4. Variable Type
+### 4. Variable Type
 
-| Primitive Type | Object Type |
-| :------------: | :---------: |
-|single item|box container|
-|number, string, boolean,<br>null, undefined, symbol|function<br>first-class function|
+|                   Primitive Type                    |           Object Type            |
+| :-------------------------------------------------: | :------------------------------: |
+|                     single item                     |          box container           |
+| number, string, boolean,<br>null, undefined, symbol | function<br>first-class function |
 
-#### 변수에 저정할 수 있는 자료형
+#### Number
 
-##### 문자형 String
-`var s = "javascript"`
-##### 숫자형 Number
-`var s = 100;`
-##### 논리형 Boolean
-`var s = ture;`
-boolean 메서드는 숫자0, null, undefined, 빈문자를 제외한 모든 데이터에 대해 true를 반환한다.
-##### null, undefined
-`t = null` `var s;` 
+- data types for number  
+   c언어나 자바에서는 숫자 선언할때 다양한 데이터 타입을 사용하지만 자바스크립트에서는 let 으로 모두 선언가능.
+  `int a = 2;` `let a = 2;`
+  `int b = 2.5;` `let b = 2.5`;
+  <br>
+- special numberic values
+  `const infinity = 1 / 0;`
+  `const negativeinfinity = -1 / 0;`
+  `const nAn = "not a number" / 0;`
+  <br>
+- bigInt
+  `const bigInt = 123456789012345678901234567890n; //over (-2**53) ~ 2*53`
+
+#### String
+
+`const char = "c";`
+`const brendan = "brendan";`
+`const greeting = "hello" + brendan;`
+
+- template literals (String)
+  `const hello = "hi ${brendan} !";`
+
+#### Boolean
+
+false : 0, null, undefined, NaN, ""
+true : any other value
+
+#### Null
+
+`let nothing = null;`
+
+#### Undefined
+
+`let x;`
+`let x = undefined;`
+
+#### Symbol
+
+map이나 다른 자료구조에서 고유한 식별자가 필요할 때  
+동시다발적으로 일어날 수 있는 코드에서 우선순위를 부여하고 싶을 때
+
+```js
+const symbol1 = symbol("id");
+const symbol2 = symbol("id");
+
+console.log(symbol1 === symbol2); // false
+
+const gSymbol1 = symbol.for("id");
+const gSymbol2 = symbol.for("id");
+
+console.log(gSymbol1 === gSymbol2); // true
+```
+
+symbol 출력 시 `symbol1.description`을 사용하여 String형식으로 변환하여 출력하여야 함.
+
+### 5. Dynamic typing
+
+dynamically typed language
+
+```js
+let a = "hello";
+console.log(a.charAt(0)); //h
+
+a = 1;
+console.log(`value : ${a}, type: ${typeof a}`); //value : 1, type: number
+
+a = "7" + 5;
+console.log(`value : ${a}, type: ${typeof a}`); //value : 75, type: string
+
+a = "8" / "2";
+console.log(`value : ${a}, type: ${typeof a}`); //value : 4, type: number
+
+console.log(a.charAt(0)); //error
+```
 
 --
 ##### typeof
