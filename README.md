@@ -200,25 +200,182 @@ console.log(a.charAt(0)); //error
 
 ---
 
-### 연산자
+### 연산
 
-##### 산술 연산자
-`+, -, *, /, %`
-##### 대입 연산자
-`=, +=, *=, /=, %=`
-##### 증감 연산자
-`++, --`
-##### 비교 연산자
-`>, <, >=, <=, ==, !=, ===, !==`
-##### 논리 연산자
-`||, &&, !`
-##### 삼항 조건 연산자
-`조건식 ? 자바스크립트코드1 : 자바스크립트코드2;`
+### 1. String concatenation
+
 ```js
-var a = 10;
-var b = 3;
+console.log("my" + "cat"); // my cat
+console.log("1" + 2); // 12
+console.log(`1+2 = ${1 + 2}`); // 1+2 = 3
+```
 
-var result = a > b ? "hello" : "world";
+### 2. Numberic operators
+
+```js
++ // add
+- // substract
+/ // divide
+* // multiply
+% // remainder
+** // exponentiation
+```
+
+### 3. Increment and decrement operators
+
+```js
+let counter = 2;
+const preIncrement = ++counter;
+
+counter = counter + 1;
+preIncrement = counter;
+```
+
+```js
+let counter = 2;
+const postIncrement = counter++;
+
+postIncrement = counter;
+counter = counter + 1;
+```
+
+### 4. Asssignment operators
+
+```js
+x += y; // x = x + y;
+x -= y; // x = x - y;
+x *= y; // x = x * y;
+x /= y; // x = x / y;
+```
+
+### 5. Comparison operators
+
+```js
+< // less than
+<= // less than or equal
+> // greater than
+>= // greater than or equal
+```
+
+### 6. Logical operators
+
+|  `  |     | `(or) | `&&`(and) | `!`(not) |
+| :-: | :-: | :---: | --------- | -------- |
+
+- or
+
+```js
+vlaue1 = true;
+value2 = 4 < 2;
+value3 = false;
+
+console.log(value1 || value2 || value3);
+```
+
+가장 처음 나오는 true 값을 출력.
+
+- and
+  모든 값이 모두 true 일때, true 출력.
+  null 체크할 때도 사용 가능
+
+```js
+nullableObject && nullObject.something;
+
+if (nullableObject != null) {
+  nullableObject.something;
+}
+```
+
+- not
+  값을 반대로 출력
+
+### 7. Equality
+
+```js
+const stringFive = "5";
+const numberFive = 5;
+```
+
+|                            ==                            |                    ===                    |
+| :------------------------------------------------------: | :---------------------------------------: |
+|            `stringFive == numberFive //true`             |    `stringFive === numberFive //false`    |
+|            `stringFive != numberFive //false`            |    `stringFive !== numberFive //true`     |
+| 데이터형식은 다르지만 같은 숫자 5이기 때문에 같다고 판단 | 데이터 형식이 다르기 때문에 다르다고 판단 |
+
+### 8. Conditional operators
+
+if, else if, else
+
+```js
+
+const name 'h22ju';
+
+if (name === 'h22ju') {
+  console.log(`hello! ${name}`);
+} else if (name === 'tomy') {
+  console.log(`hi! ${name}`);
+} else {
+  console.log('unknown');
+}
+```
+
+### 9. Ternary operators
+
+```js
+condition ? value1 : value2;
+console.log(name === "a" ? "yes" : "no");
+```
+
+### 10. Switch statement
+
+```js
+const browser = 'IE';
+
+switch (browser) {
+  case 'IE' :
+  console.log('IE');
+  break;
+
+  case 'Chrome' :
+  case 'Firefox' :
+  console.log('hi');
+  break;
+
+  default :
+  console.log('hello');
+  break;
+```
+
+break : loop를 완전히 끝냄.
+continue : 스킵 후 다음으로 넘어감.
+
+### 11. Loops
+
+while loop
+do while loop
+for
+nested loops
+
+```js
+// 0~10까지 출력, countinue 사용하여 짝수만 출력
+
+for (i = 0; i <= 10; i++) {
+  if (i % 2 == 1) {
+    continue;
+  }
+  console.log(`i: ${i}`);
+}
+```
+
+```js
+// 0~10까지 출력, 8에서 break
+
+for (i = 0; i <= 10; i++) {
+  if (i >= 8) {
+    break;
+  }
+  console.log(`i: ${i}`);
+}
 ```
 
 #### 연산자 우선순위
