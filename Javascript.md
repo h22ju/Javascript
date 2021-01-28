@@ -390,50 +390,184 @@ for (i = 0; i <= 10; i++) {
 
 ---
 
-## 03. 제어문
+### 함수
 
-#### 조건문 ( if/ else / else if )
-#### 선택문 ( switch )
-#### 반복문 ( while / for )
+### 1. Function declaration
 
-##### while
+```js
+function name(param1, pararm2) {
+  body;
+  return;
+}
+
+// one function === one thing
+// naming : doSomething, command, verb
 ```
-var 변수 = 초깃값;
-while (조건식) {
-  자바스크립트 코드
-  증감식;
- }
+
+```js
+function log(message) {
+  console.log(message);
+}
+log("hello!");
 ```
-##### do while
+
+### 2. Parameters
+
+premitive type : 메모리에 value가 그대로 저장
+object type : 메모리에 refernece 저장
+
+### 3. Default Parameters (ES6)
+
+```js
+function showMessage(message, from = "unknown") {
+  console.log(`${message} by ${from}`);
+}
+showMessage("hi"); // hi by unknown
 ```
-var 변수 = 초깃값;
-do{
-  자바스크립트 코드;
-  증감식;
- }while(조건식)
-```
-##### for
-```
-for(초깃값; 조건식; 증감식) {
-  자바스크립트 코드;
- }
-```
-##### 중첩 for
-```
-for(초깃값; 조건식; 증감식) {
-  for(초깃값; 조건식; 증감식) {
-  자바스크립트 코드;
+
+### 4. Rest Parameters (ES6)
+
+```js
+function printAll(...args) {
+  for (let i = 0; i < args.length; i++) {
+    console.log(args[i]);
   }
- }
+}
+
+printAll("a", "b", "c");
+
+for (const arg of args) {
+  console.log(arg);
+}
+
+args.forEach((arg) => console.log(arg));
 ```
 
-##### break, continue
-break : 반복문을 강제로 종료
-continue : continue 다음에 오는 코드는 무시하고 바로 조건식으로 이동
+### 5. Local scope
+
+```js
+let globalMessage = "global"; //global variable
+
+function printMessage() {
+  let message = "local";
+  console.log(message); //local variable
+  console.log(globalMessage);
+}
+
+printMessage();
+
+console.log(message); // error
+```
+
+### 6. Return
+
+모든 함수에는 return undefined
+
+```js
+function sum(a, b) {
+  return a + b;
+}
+
+const result = sum(1, 2);
+console.log(sum(1, 2), result);
+```
+
+### 7. Early retun, early exit
+
+- bad
+
+```js
+function upgradeUser(user) {
+  if (user.point >= 10) {
+    // long upgrade logic
+  }
+}
+```
+
+- good
+
+```js
+function upgradeUser(user) {
+  if (user.point <= 10) {
+    return;
+  }
+  // long upgrade logic
+}
+```
 
 ---
 
-## 04. 객체
+### First-class Function
+
+- function 변수에 할당 가능
+- function의 parameter로 전달 가능
+- return 값으로도 return 가능
+
+#### 1. Function expression
+
+```js
+function sum(a, b) {
+  return a + b;
+}
+
+const print = function () {
+  console.log("print");
+};
+
+print();
+const printAgain = print;
+printAgain();
+const sumAgain = sum;
+console.log(sumAgain(1, 3));
+```
+
+#### 2. Callback
+
+```js
+function randomQuiz(answer, printYes, printNo) {
+  if (answer === "apple") {
+    printYes();
+  } else {
+    printNo();
+  }
+}
+
+const printYes = function () {
+  console.log("Yes!");
+};
+
+const printNo = function () {
+  console.log("No!");
+};
+
+randomQuiz("peach", "printYes", "printNo"); // No!
+randomQuiz("apple", "printYes", "printNo"); // Yes!
+```
+
+---
+
+#### Arrow Function
+
+- always anonymous function
+
+```js
+const simplePrint = function () {
+  console.log("pirnt!");
+};
+```
+
+```js
+const simplePrint = () => console.log("pirnt!");
+
+const add = () => (a, b) => a + b;
+```
+
+#### IIFE : Immediately Invoked Function Expression
+
+`(function hello() {console.log('IIFE')})();`
+---
+
+### 객체
 
 javascript는 object 기반 언어이다.
 객체는 method와 property을 가지고 있다.
@@ -502,42 +636,4 @@ navigator, screen, location, frames, history 객체 등이 있다.
 [생활코딩 자바스크립트 사전](https://opentutorials.org/course/50, "javascript")
 
 ---
-
-## 05. 함수
-
-#### basic
-```
-function 함수명() {
-  자바스크립트 코드;
- }
-```
-#### parameter, argument
-```js
-function sum1(left, right) { // left, right는 parameter(매개변수)
-document.write(left+right);
-}
-
-sum(2,3); // 2, 3은 argument (인자)
-```
-
-```js
-// 간단하게 만들어본 구구단 함수
-function gugu(num) {
-  for (var i = 1; i <= 9; i++) {
-    document.write(num + " X " + i + " = " + num * i + "<br>");
-  }
-}
-
-gugu(6);
-```
-
-#### return
-```js
-function sum2(left, right) { 
-  return left+right;
-}
-
-document.write(sum2(2,3));
-```
-
 
