@@ -413,8 +413,8 @@ log("hello!");
 
 ### 2. Parameters
 
-premitive type : 메모리에 value가 그대로 저장
-object type : 메모리에 refernece 저장
+premitive type : 메모리에 value가 그대로 저장  
+object type : 메모리에 refernece 저장  
 
 ### 3. Default Parameters (ES6)
 
@@ -565,6 +565,7 @@ const add = () => (a, b) => a + b;
 #### IIFE : Immediately Invoked Function Expression
 
 `(function hello() {console.log('IIFE')})();`
+
 ---
 
 ### 객체
