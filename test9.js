@@ -22,7 +22,7 @@ function calculate(commmand, a, b) {
       break;
 
     default:
-      console.log(`command : add, substract, divdie, multiply, remainder`);
+      console.log(`unknown command`);
       break;
   }
 }
