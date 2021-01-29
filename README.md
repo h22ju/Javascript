@@ -413,8 +413,8 @@ log("hello!");
 
 ### 2. Parameters
 
-premitive type : 메모리에 value가 그대로 저장  
-object type : 메모리에 refernece 저장  
+premitive type : 메모리에 value가 그대로 저장
+object type : 메모리에 refernece 저장
 
 ### 3. Default Parameters (ES6)
 
@@ -570,14 +570,277 @@ const add = () => (a, b) => a + b;
 
 ### 객체
 
-javascript는 object 기반 언어이다.
-객체는 method와 property을 가지고 있다.
+|       Class       |       Object        |
+| :---------------: | :-----------------: |
+|     template      | instance of a class |
+|   declare once    | created many times  |
+|    no data in     |       data in       |
+| introduced in ES6 |                     |
 
+### 1. Class declarations
+
+```js
+class person {
+  //constructor 생성자
+  constructor(name, age) {
+    //fields
+    this.name = name;
+    this.age = age;
+  }
+
+  //method
+  speak() {
+    console.log(`hi i'm ${name}.`);
+  }
+}
 ```
-객체.메서드();
-객체.속성;
-객체.속성 = 값;
+
+- object 생성
+
+```js
+const h22ju = new Person("heeju", 20);
+console.log(h22ju.name); //heeju
+console.log(h22ju.age); //20
+h22ju.speak(); //hi i'm heeju.
 ```
+
+### 2. Getter and Setter
+
+```js
+class User {
+  constructor (firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+}
+
+const user1 = new User("Harry", "Potter", -1);
+console.log(user1.age);
+
+get age() {
+  return this._age;
+}
+
+set age(value) {
+  if(value<0) {
+    throw Error ("age can't be negative!");
+  }
+this._age = value;
+}
+```
+
+### 3. Fields (public, private)
+
+```js
+class Experiment {
+  publicField = 2;
+  #privateField = 0;
+}
+```
+
+### 4. Static
+
+```js
+class Article {
+  static wizard = 'Harry'
+  constructor (articleNumber) {
+    this.articleNumber = articleNumber;
+  }
+
+  static printWizard {
+    console.log(Article.wizard);
+  }
+}
+
+const article1 = new Article(1);
+const article2 = new Article(2);
+console.log(Article.wizard); // Harry
+Article.printWizard();
+```
+
+### 5. Inheritance
+
+```js
+class Shape {
+  constructor(width, height, color) {
+    this.width = width;
+    this.height = height;
+    this.color = color;
+  }
+
+  draw() {
+    console.log(`drawing ${this.color} color!`);
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+class Rectangle extends Shape {}
+class Triangle extends Shape {
+  draw() {
+    super.draw();
+    console.log(`${this.color} triangle 🔺`);
+  }
+
+  getArea() {
+    return (this.width * this.height) / 2;
+  }
+}
+
+const rectangle = new Rectangle(20, 20, "blue");
+rectangle.draw();
+console.log(rectangle.getArea());
+const triangle = new Triangle(20, 20, "red");
+triangle.draw();
+console.log(triangle.getArea());
+```
+
+### 6. class checking
+
+- instace of
+
+`console.log (rectangle instance of Rectangle);`
+
+- obj가 class를 사용하여 만들어진것인디 확인
+- true, false 반환
+
+---
+
+## 객체
+
+Object
+
+- one of the JavaScript's data types.
+- object = { key: value };
+
+### 1. Literals and Properties
+
+`const obj1 = {}; // object literal syntax`  
+`const obj2 = new Object(); // object constructor syntax`
+
+```js
+//primitive type
+const name = "heeju";
+const age = 20;
+print(name, age);
+
+function print(name, age) {
+  console.log(name);
+  console.log(age);
+}
+```
+
+```js
+function print(user) {
+  console.log(user.name);
+  console.log(user.age);
+}
+
+const heeju = { name: "heeju", age: 20 };
+print(heeju);
+```
+
+### 2. Computed properties
+
+- key should be always string
+
+```js
+console.log(heeju.name); // key에 해당하는 값을 받아올 때
+console.log(heeju["name"]); // computed properties는 정확하게 어떤 key가 필요한지 모를때, runtime에서 결정될 때
+```
+
+### 3. Property value shorthand
+
+```js
+const person1 = { name: "Harry", age: 15 };
+const person2 = { name: "Ron", age: 15 };
+const person3 = { name: "Hermione", age: 15 };
+const person4 = makePerson("heeju", 20);
+
+function makePerson(name, age) {
+  return {
+    /*name:*/ name, // key와 value의 이름이 동일하다면 생략 가능
+    age,
+  };
+}
+```
+
+### 4. Constructor Function
+
+```js
+const person4 = new Person {'heeju', 20};
+
+function Person(name, age) {
+  //this = {};
+  this.name = name;
+  this.age = age;
+  // return this;
+}
+```
+
+### 5. In Operator
+
+- property existence check (key in obj)
+
+```js
+console.log("name" in heeju);
+console.log("age" in heeju);
+console.log("random" in heeju);
+```
+
+### 6. for..in vs for..of
+
+- for (key in obj)
+
+```js
+for (key in heeju) {
+  console.log(key);
+}
+```
+
+- for (value of iterable)
+
+```js
+const array = [1, 2, 3, 4];
+for (value of array) {
+  console.log(value);
+}
+```
+
+### 7. Cloning
+
+- Object.assign(dest, [obj1, obj2, obj3 ...])
+
+```js
+const user = { name: "harry", age: "20" };
+const user2 = user;
+user2.name = "ron";
+console.log(user); // { name: "ron", age: "20" }
+
+// old way
+const user3 = {};
+for (key in user) {
+  user3[key] = user[key];
+}
+console.log(user3); // { name: "ron", age: "20" }
+
+// object.assign
+const user4 = Object.assign({}, user);
+console.log(user4); // { name: "ron", age: "20" }
+```
+
+```js
+const fruit1 = { color: "red" };
+const fruit2 = { color: "blue", size: "big" };
+const mixed = Object.assign({}, fruit1, fruit2);
+
+console.log(mixed.color); // blue
+condole.log(mixe.size); // big
+```
+
 
 ![object_model](https://user-images.githubusercontent.com/76121929/105486091-48039480-5cf1-11eb-836c-98d70a051abf.JPG)
 
