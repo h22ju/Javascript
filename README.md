@@ -418,22 +418,22 @@ function calculate(commmand, a, b) {
   }
 }
 
-calculate("+", 1, 2);
-calculate("add", 1, 2);
+calculate("+", 1, 2); // 1+2 = 3
+calculate("add", 1, 2); // 1+2 = 3
 
-calculate("-", 1, 2);
-calculate("substract", 1, 2);
+calculate("-", 1, 2); // 1-2 = -1
+calculate("substract", 1, 2); // 1-2 = -1
 
-calculate("/", 1, 2);
-calculate("divide", 1, 2);
+calculate("/", 1, 2); // 1/2 = 0.5
+calculate("divide", 1, 2); // 1/2 = 0.5
 
-calculate("*", 1, 2);
-calculate("multiply", 1, 2);
+calculate("*", 1, 2); // 1*2 = 2
+calculate("multiply", 1, 2); // 1*2 = 2
 
-calculate("%", 1, 2);
-calculate("remainder", 1, 2);
+calculate("%", 1, 2); // 1%2 = 1
+calculate("remainder", 1, 2); // 1%2 = 1
 
-calculate("=", 1, 2);
+calculate("=", 1, 2); // unknown command
 ```
 
 ---
