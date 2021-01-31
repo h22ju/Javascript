@@ -8,5 +8,5 @@ function solution(arr) {
 }
 
 function solution2(arr) {
-return array.reduce((a, b) => a + b) / array.length;
+    return array.reduce((a, b) => a + b) / array.length;
 }
