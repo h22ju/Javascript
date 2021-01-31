@@ -948,3 +948,107 @@ navigator, screen, location, frames, history 객체 등이 있다.
 [생활코딩 자바스크립트 사전](https://opentutorials.org/course/50, "javascript")
 
 ---
+
+## 배열
+### 1. Declaration
+```js
+const arr1 = new Array();
+const arr2 = [1, 2];
+```
+
+### 2. Index position
+```js
+console.log(fruits);
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits[2]); // undefined
+console.log(fruits[fruits.length - 1]);
+```
+
+### 3. Looping over an array
+- print all fruits
+
+- for
+```js
+for (i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+```
+
+- for of
+```js
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+- forEach
+```js
+fruits.forEach((fruit, index) => console.log(fruit));
+```
+
+### 4. Addition, deletion, copy
+
+#### push: add an item to the end
+```js
+fruits.push("🍇", "🍍"); // ["🍎", "🍌", "🍇", "🍍"]
+console.log(fruits);
+```
+#### pop: remove an item from the end
+```js
+fruits.pop(); // ["🍎", "🍌", "🍇"]
+fruits.pop(); // ["🍎", "🍌"]
+console.log(fruits);
+```
+#### unshift: add an item to the beginning
+```js
+fruits.unshift("🥝", "🍉"); // ["🥝", "🍉", "🍎", "🍌"]
+console.log(fruits);
+```
+#### shift: remove an item from the beginning
+```js
+fruits.shift(); // ["🍉", "🍎", "🍌"]
+fruits.shift(); // ["🍎", "🍌"]
+console.log(fruits);
+```
+- shift, unshift are slower than pop, push  
+pop과 push는 기존 데이터 이동이 없음  
+shift와 unshift는 기존 데이터를 이동 후  
+데이터를 삽입, 삭제하기 때문에 pop과 push보다 느림.  
+
+#### splice: remove an item by index position
+```js
+fruits.push("🍇", "🍍", "🥝", "🍉"); // ["🍎", "🍌", "🍇", "🍍", "🥝", "🍉"]
+console.log(fruits);
+
+fruits.splice(1); // ["🍎"]
+console.log(fruits);
+
+fruits.splice(1, 1); // ["🍎", "🍇", "🍍", "🥝", "🍉"]
+console.log(fruits);
+
+fruits.splice(1, 1, "🍏"); // ["🍎", "🍏", "🍇", "🍍", "🥝", "🍉"]
+console.log(fruits);
+```
+
+#### concat: combine two arrays
+```js
+const fruits2 = ["🍊", "🍑"];
+const newFruits = fruits.concat(fruits2);
+console.log(newFruits);
+```
+
+### 5. Searching
+- find the index
+
+```js
+console.log(fruits2);
+console.log(fruits2.indexOf("🍊")); // 0
+console.log(fruits2.includes("🍊")); // true
+console.log(fruits2.indexOf("🍒")); // -1
+console.log(fruits2.includes("🍒")); // false
+
+fruits2.push("🍊");
+console.log(fruits2.indexOf("🍊")); // 0
+console.log(fruits2.lastIndexOf("🍊")); // 2
+```
