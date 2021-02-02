@@ -750,7 +750,7 @@ console.log(triangle.getArea());
 
 - instace of
 
-`console.log (rectangle instance of Rectangle);`
+`console.log (rectangle instance of Rectangle);`  
 
 - obj가 class를 사용하여 만들어진것인디 확인
 - true, false 반환
@@ -767,7 +767,7 @@ Object
 ### 1. Literals and Properties
 
 `const obj1 = {}; // object literal syntax`  
-`const obj2 = new Object(); // object constructor syntax`
+`const obj2 = new Object(); // object constructor syntax`  
 
 ```js
 //primitive type
