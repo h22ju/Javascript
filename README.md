@@ -1042,7 +1042,7 @@ console.log(newFruits);
 ```
 
 ### 5. Searching
-- find the index
+- find the index  
 
 ```js
 console.log(fruits2);
