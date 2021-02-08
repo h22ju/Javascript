@@ -86,8 +86,8 @@ let result = str.replace(pattern, "$2, $1");
 console.log(result);
 ```
 
-[정규표현식 시각화] https://regexper.com/
-[정규표현식 빌더] https://regexr.com/
+[정규표현식 시각화]  https://regexper.com/  
+[정규표현식 빌더]  https://regexr.com/  
 
 #### 치환
 
