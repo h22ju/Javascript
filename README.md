@@ -948,7 +948,7 @@ navigator, screen, location, frames, history 객체 등이 있다.
 `참조 변수(인스턴스 이름) = new 생성함수();`
 
 
-[생활코딩 자바스크립트 사전](https://opentutorials.org/course/50, "javascript")
+[생활코딩 자바스크립트 사전](https://opentutorials.org/course/50, "javascript")  
 
 ---
 
