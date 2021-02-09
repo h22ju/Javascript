@@ -1,7 +1,7 @@
 ### 정규표현식(Regular Expression)
 
-- compile
-- execution
+- compile  
+- execution  
 
 #### 정규표현식 리터럴
 
