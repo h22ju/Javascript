@@ -26,7 +26,7 @@ HTML5에는 Geolocation, Canvas, Drag&Drop등 풍부한 API(Application Programm
 
 ---
 
-## 02. 자바스크립트 기초 문법 
+## 02. 자바스크립트 기초 문법 ✌
 
 #### 자바스크립트 선언문
 ```html
