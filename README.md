@@ -69,7 +69,7 @@ HTML5에는 Geolocation, Canvas, Drag&Drop등 풍부한 API(Application Programm
 변수명에는 영문과 숫자 일부 특수문자만 포함 가능하다.  
 변수명은 의미에 맞게 만드는것이 좋다.  
 변수명은 두 번째 단어의 첫 글자는 대문자로 표기하는 Camel표기법으로 표기하는것이 좋다. <br>
-**ES6**
+🌟 **ES6**
 
 ### 1. Use strict
 
