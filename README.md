@@ -1055,3 +1055,15 @@ fruits2.push("🍊");
 console.log(fruits2.indexOf("🍊")); // 0
 console.log(fruits2.lastIndexOf("🍊")); // 2
 ```
+
+## async callback
+
+- Javascript is synchronous
+- Execute the code block by order after hoisting
+- hoisting: var, function declaration
+
+```js
+console.log("1");
+setTimeout(() => console.log("2");, 1000);
+console.log("3");
+```
