@@ -22,7 +22,7 @@ let pattern = new RegExp("a");
 let pattern = /a/;
 console.log(pattern.exec("abcdef")); // ["a"]
 console.log(pattern.exec("bcdefg")); // null
-```
+``` 
 
 #### RegExp.test()
 
