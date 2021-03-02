@@ -1,7 +1,7 @@
 https://poiemaweb.com/
 http://tcpschool.com/javascript/intro  
 
-## 01. 자바스크립트 시작
+## 01. 자바스크립트 시작 
 
 #### 자바스크립트 탄생 배경 👶
 최초의 자바스크립트는 넷스케이프에 근무하던 **브렌드 아이크**가 모카(Mocha)라는 이름으로 개발함.  
